@@ -208,7 +208,7 @@ static void tdeletechar(int);
 static void tdeleteline(int);
 static void tinsertblank(int);
 static void tinsertblankline(int);
-static int tlinelen(Line len);
+static int tlinelen(Line line);
 static int tiswrapped(Line line);
 static char *tgetglyphs(char *, const Glyph *, const Glyph *);
 static size_t tgetline(char *, const Glyph *);
@@ -558,11 +558,11 @@ selnormalize(void)
 	if (sel.type == SEL_RECTANGULAR)
 		return;
 
-  i = tlinelen(TLINE(sel.nb.y));
+    i = tlinelen(TLINE(sel.nb.y));
 	if (sel.nb.x > i)
 		sel.nb.x = i;
-  if (sel.ne.x >= tlinelen(TLINE(sel.ne.y)))
-    sel.ne.x = term.col - 1;
+    if (sel.ne.x >= tlinelen(TLINE(sel.ne.y)))
+        sel.ne.x = term.col - 1;
 }
 
 int
@@ -1148,7 +1148,7 @@ tnew(int col, int row)
 	term.tabs = xmalloc(col * sizeof(*term.tabs));
 	for (i = 0; i < HISTSIZE; i++)
 		term.hist[i] = xmalloc(col * sizeof(Glyph));
-  treset();
+    treset();
 }
 
 /* handle it with care */
@@ -2259,7 +2259,7 @@ externalpipe(const Arg *arg)
 	newline = 0;
 	for (n = 0; n < term.row; n++) {
 		bp = term.line[n];
-		lastpos = MIN(tlinelen(n) + 1, term.col) - 1;
+		lastpos = MIN(tlinelen(bp) + 1, term.col) - 1;
 		if (lastpos < 0)
 			break;
 		end = &bp[lastpos + 1];
@@ -2365,7 +2365,7 @@ void
 tdumpline(int n)
 {
 	char str[(term.col + 1) * UTF_SIZ];
-  tprinter(str, tgetline(str, &term.line[n][0]));
+    tprinter(str, tgetline(str, &term.line[n][0]));
 }
 
 void
