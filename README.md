@@ -16,7 +16,8 @@ I've applied the following patches:
 
 # Custom modifications
 
-None for now
+- Set default font to Fantasque Sans Mono
+- Set fallback font to Noto Color Emoji
 
 
 # Installation
