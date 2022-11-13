@@ -1,5 +1,5 @@
 # st version
-VERSION = 0.9
+VERSION = shellcode-custom-0.9
 
 # Customize below to fit your system
 
