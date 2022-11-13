@@ -178,22 +178,28 @@ static MouseShortcut mshortcuts[] = {
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 
+static char *dmenu_bridge[] = {"dmenu-st", NULL};
+
 static Shortcut shortcuts[] = {
     /* mask                 keysym          function        argument */
-    { MODKEY,               XK_minus,       zoom,           {.f = -1} },
-    { MODKEY,               XK_plus,        zoom,           {.f = +1} },
-    { MODKEY,               XK_0,           zoomreset,      {.f =  0} },
-    { MODKEY | ShiftMask,   XK_minus,       zoom,           {.f = -1} },
-    { MODKEY | ShiftMask,   XK_plus,        zoom,           {.f = +1} },
-    { MODKEY | ShiftMask,   XK_0,           zoomreset,      {.f =  0} },
+    { MODKEY,               XK_minus,       zoom,            {.f = -1} },
+    { MODKEY,               XK_plus,        zoom,            {.f = +1} },
+    { MODKEY,               XK_0,           zoomreset,       {.f =  0} },
+    { MODKEY | ShiftMask,   XK_minus,       zoom,            {.f = -1} },
+    { MODKEY | ShiftMask,   XK_plus,        zoom,            {.f = +1} },
+    { MODKEY | ShiftMask,   XK_0,           zoomreset,       {.f =  0} },
+    { MODKEY | ControlMask, XK_j,           zoom,            {.f = -1} },
+    { MODKEY | ControlMask, XK_k,           zoom,            {.f = +1} },
 
-    { MODKEY,               XK_c,           clipcopy,       {.i =  0} },
-    { MODKEY,               XK_v,           clippaste,      {.i =  0} },
+    { MODKEY,               XK_c,           clipcopy,        {.i =  0} },
+    { MODKEY,               XK_v,           clippaste,       {.i =  0} },
 
-    { MODKEY,               XK_k,           kscrollup,      {.i =  1} },
-    { MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
-    { MODKEY,               XK_u,           kscrollup,      {.i = -1} },
-    { MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
+    { MODKEY,               XK_k,           kscrollup,       {.i =  1} },
+    { MODKEY,               XK_j,           kscrolldown,     {.i =  1} },
+    { MODKEY,               XK_u,           kscrollup,       {.i = -1} },
+    { MODKEY,               XK_d,           kscrolldown,     {.i = -1} },
+
+    { MODKEY,               XK_x,           externalpipe,    {.v = dmenu_bridge} },
 };
 
 /*
