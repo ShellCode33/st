@@ -13,6 +13,7 @@ I've applied the following patches:
 - [externalpipe](https://st.suckless.org/patches/externalpipe/)
 - [glyph wide support](https://st.suckless.org/patches/glyph_wide_support/)
 - [csi_22_23](https://st.suckless.org/patches/csi_22_23/)
+- [xresources](https://st.suckless.org/patches/xresources/)
 
 
 # Custom modifications
