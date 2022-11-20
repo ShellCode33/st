@@ -12,6 +12,7 @@ I've applied the following patches:
 - [font2](https://st.suckless.org/patches/font2/)
 - [externalpipe](https://st.suckless.org/patches/externalpipe/)
 - [glyph wide support](https://st.suckless.org/patches/glyph_wide_support/)
+- [csi_22_23](https://st.suckless.org/patches/csi_22_23/)
 
 
 # Custom modifications
